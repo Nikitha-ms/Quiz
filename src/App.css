@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: purple;
+}
+.logo-container {
+  display: flex;
+}
+.logo {
+  height: 100px;
+  width: 200px;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: purple;
+}
+.U-list {
+  display: flex;
+  list-style: none;
+}
+.nav-list {
+  padding: 20px;
+  justify-content: flex-end;
+  font-size: 2.5em;
+  color: white;
+  cursor: pointer;
+}
+
