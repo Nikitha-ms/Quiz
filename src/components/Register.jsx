@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { useState } from "react";
+import { AuthContext } from "../context/AuthContext";
+import PropTypes from "prop-types";
 
-function Register() {
+function Register({ setRegistered }) {
+  const { register } = useContext(AuthContext);
   const [data, setdata] = useState({
     username: "",
     email: "",
@@ -11,8 +15,12 @@ function Register() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
-  }
+    if (data.username && data.email && data.password) {
+      register(data.username, data.email, data.password);
+    } else {
+      alert("Please fill all the fields");
+    }
+  };
 
   return (
     <div>
@@ -54,10 +62,21 @@ function Register() {
               Register
             </button>
           </form>
+          <span
+            className="span-log"
+            onClick={() => {
+              setRegistered(true);
+            }}
+          >
+            go to login
+          </span>
         </div>
       </div>
     </div>
   );
 }
+Register.propTypes = {
+  setRegistered: PropTypes.func.isRequired,
+};
 
 export default Register;

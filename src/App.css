@@ -1,49 +1,7 @@
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: purple;
-}
-.logo-container {
-  display: flex;
-}
-.logo {
-  height: 100px;
-  width: 200px;
-}
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: purple;
-}
-.U-list {
-  display: flex;
-  list-style: none;
-}
-.nav-list {
-  padding: 20px;
-  justify-content: flex-end;
-  font-size: 1.5em;
-  text-decoration: none;
-  color: white;
-  cursor: pointer;
-}
-.Home-img {
-  width: 100vw;
-  height: 70vh;
-}
-
-.Home-h1 {
-  text-align: center;
-  padding: 10px;
-  margin-top: 20px;
-  font-size: 3em;
-  color: purple;
-}
-
 /* styles.css */
+/* * {
+  outline: 1px solid red;
+} */
 .login-container {
   display: flex;
   justify-content: center;
@@ -54,6 +12,7 @@
   background-size: cover;
   background-position: center;
   height: 100vh;
+  width: 100vw;
 }
 .login-container h1 {
   color: white;
@@ -112,7 +71,8 @@ button:hover {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;/* Background color for the container */
+  height: 100vh;
+  width: 100vw; /* Background color for the container */
 }
 
 .register-form {
@@ -127,4 +87,27 @@ button:hover {
   font-size: 2em;
   text-align: center;
   margin-bottom: 20px;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+.span-log{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 20px;
 }

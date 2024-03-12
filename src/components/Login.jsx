@@ -1,19 +1,27 @@
+import { useContext } from "react";
+import PropTypes from "prop-types";
 import { useState } from "react";
+import { AuthContext } from "../context/AuthContext";
 
-function Login() {
+function Login({ setRegistered }) {
+  const { login } = useContext(AuthContext);
 
   const [data, setdata] = useState({
     username: "",
     password: "",
   });
-  
+
   const handleChange = (e) => {
     setdata({ ...data, [e.target.name]: e.target.value });
-  }
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
-  }
+    if (data.username && data.password) {
+      login(data.username, data.password);
+    } else {
+      alert("Please fill all the fields");
+    }
+  };
 
   return (
     <div>
@@ -41,13 +49,25 @@ function Login() {
                 onChange={handleChange}
               />
             </div>
-            <button type="submit" onClick={handleSubmit}>Login</button>
+            <button type="submit" onClick={handleSubmit}>
+              Login
+            </button>
           </form>
+          <span
+            className="span-log"
+            onClick={() => {
+              setRegistered(false);
+            }}
+          >
+            go to Register
+          </span>
         </div>
-
       </div>
     </div>
   );
 }
+Login.propTypes = {
+  setRegistered: PropTypes.func.isRequired,
+};
 
 export default Login;
